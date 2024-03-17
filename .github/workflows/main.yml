@@ -49,7 +49,7 @@ jobs:
     - name: script 파일 복사
       run: cp scripts/*.sh myfolder/
     - name: myfolder 로 이동후 압축
-      run: cd myfolder && zip -r deploytos3
+      run: cd myfolder && zip -r deploytos3.zip .
     - name: 확인
       run: ls
     - name: S3에 업로드
