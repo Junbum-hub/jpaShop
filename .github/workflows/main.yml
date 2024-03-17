@@ -3,7 +3,7 @@ run-name: Running
 on:
   push:
     branches: 
-      - production
+      - main
       - 'releases/**'
 
 env:
@@ -19,7 +19,7 @@ jobs:
     - name: main 브랜치로 이동
       uses: actions/checkout@v3
       with:
-        ref: production
+        ref: main
     - name: JDK 17 설치
       uses: actions/setup-java@v3
       with:
