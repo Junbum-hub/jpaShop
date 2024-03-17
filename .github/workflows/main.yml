@@ -51,7 +51,7 @@ jobs:
     - name: myfolder 로 이동후 압축
       run: cd myfolder && zip -r deploytos3.zip .
     - name: 확인
-      run: ls
+      run: cd myfolder && ls
     - name: S3에 업로드
       run: aws deploy push --application-name ${{ env.AWS_CODE_DEPLOY_APPLICATION }} --ignore-hidden-files --s3-location s3://$AWS_S3_BUCKET/cicdtest/$GITHUB_SHA.zip --source .
     - name: EC2에 배포
