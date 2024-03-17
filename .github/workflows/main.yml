@@ -38,6 +38,8 @@ jobs:
 
     - name: 포함시킬 파일 담을 디랙터리 생성
       run: mkdir myfolder
+    - name: 배포시킬 파일 담을 디랙터리 생성
+      run: mkdir deployfolder
     - name: 도커 컴포즈 파일 복사
       run: cp docker-compose.yml myfolder/
     - name: jar 복사
@@ -52,6 +54,8 @@ jobs:
       run: cd myfolder && zip -r deploytos3.zip .
     - name: 확인
       run: cd myfolder && ls
+    - name: 이동
+      run: mv myfolder/deploytos3.zip deployfolder/SpringBoot_CI-CD.zip && cd deployfolder
     - name: S3에 업로드
       run: aws deploy push --application-name ${{ env.AWS_CODE_DEPLOY_APPLICATION }} --ignore-hidden-files --s3-location s3://$AWS_S3_BUCKET/cicdtest/$GITHUB_SHA.zip --source .
     - name: EC2에 배포
