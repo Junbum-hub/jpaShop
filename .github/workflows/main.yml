@@ -2,7 +2,7 @@ name: CICD Test
 run-name: Running
 on:
   push:
-    branches:
+    branches: 
       - production
       - 'releases/**'
 
