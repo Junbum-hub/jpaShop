@@ -44,13 +44,7 @@ jobs:
     - name: script 파일 복사
       run: cp scripts/*.sh myfolder/
     - name: myfolder 로 이동후 압축
-      run: cd myfolder && zip -r deploytos3.zip .
-    - name: 확인
-      run: cd myfolder && ls
-    - name: 이동
-      run: mv myfolder/deploytos3.zip deployfolder/SpringBoot_CI-CD.zip && cd deployfolder
-    - name: AWS credential 설정
-      uses: aws-actions/configure-aws-credentials@v1
+      run: cd myfolder
       with:
         aws-region: ${{ env.AWS_REGION }}
         aws-access-key-id: ${{ secrets.CICD_ACCESS_KEY }}
