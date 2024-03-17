@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 1000 #(하이버네이트 전용속성) 이 기능을 사용하면 한번에 IN 쿼리로 원하는 갯수만큼 가져올 수 있다
+
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace #이러면 쿼리 파라미터 로그를 남길 수 있다
