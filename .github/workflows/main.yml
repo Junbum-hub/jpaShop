@@ -44,7 +44,9 @@ jobs:
     - name: script 파일 복사
       run: cp scripts/*.sh myfolder/
     - name: myfolder 로 이동후 압축
-      run: cd myfolder
+      run: cd myfolder 
+    - name: AWS credential 설정
+      uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-region: ${{ env.AWS_REGION }}
         aws-access-key-id: ${{ secrets.CICD_ACCESS_KEY }}
