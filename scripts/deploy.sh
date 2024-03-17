@@ -10,5 +10,5 @@
 #   sleep 5
 # fi
 
-cd /home/ec2-user/app/step2/zip/       # 해당 디렉토리로 이동 (Dockerfile 을 해당 디렉토리에 옮겼기 때문에)
+cd /home/ubuntu/jpaShop      # 해당 디렉토리로 이동 (Dockerfile 을 해당 디렉토리에 옮겼기 때문에)
 sudo docker-compose up
