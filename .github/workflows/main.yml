@@ -38,6 +38,8 @@ jobs:
 
     - name: 도커 파일 추가
       run: mkdir myfolder
+    - name: 추가확인
+      run: ls
     - name: jar 복사
       run: cp *.jar myfolder/
     - name: 복사확인
