@@ -41,7 +41,7 @@ jobs:
     - name: 추가확인
       run: ls
     - name: jar 복사
-      run: cp *.jar myfolder/
+      run: cp build/libs/*.jar myfolder/
     - name: 복사확인
       run: ls
     - name: S3에 업로드
